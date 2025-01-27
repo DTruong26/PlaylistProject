@@ -5,7 +5,9 @@
  */
 public class Song {
     //Fields-- what information do we want each Song to store?
-
+    private String name;
+    private String author;
+    private int time;
 
 
 
@@ -26,5 +28,8 @@ public class Song {
       * What kind of mutator (setter) methods will you need?
       */
 
+      public int getTime(){
+        return time;
+      }
 
 }
