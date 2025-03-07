@@ -5,17 +5,23 @@
  */
 public class Song {
     //Fields-- what information do we want each Song to store?
-    private String name;
-    private String author;
-    private int time;
-
-
+    private String songName;
+    private String songDur;
+    private boolean liked;
+    private String artist;
+    
 
     /**
      * Constructor-- what information needs to be given to make a Song?
      * How will you handle 'liked' songs? It makes sense for a Song not be 'liked' by default
      */
-
+    public Song(String songName, String artist, String songDur, boolean liked)
+    {
+        this.songName = songName;
+        this.songDur = songDur;
+        this.liked = false;
+        this.artist = artist;
+    }
 
 
 
@@ -27,9 +33,38 @@ public class Song {
       * song easily as well!
       * What kind of mutator (setter) methods will you need?
       */
-
-      public int getTime(){
-        return time;
+      public String getName()
+      {
+            return songName;  
       }
-
-}
+      public String getArtist()
+      {
+          return artist;
+      }
+      public String songDur()
+      {
+          return songDur;
+      }
+      public boolean isLiked()
+      {
+          return liked;
+      }
+      public void like()
+      {
+          liked = true;
+      }
+      public void unlike()
+      {
+          liked = false;
+      }
+      public double calcDuration()
+      {
+          double sec = 0;
+          String min = songDur.substring(0, songDur.indexOf(":"));
+          sec += Integer.parseInt(min) * 60;
+          String secPart = songDur.substring(songDur.indexOf(":") + 1, songDur.length());
+          //String secPart = songDur.substring(0, songDur.indexOf(":") + 1);
+          sec += Integer.parseInt(secPart);
+          return sec;
+      }
+  }
