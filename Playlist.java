@@ -27,6 +27,7 @@ public class Playlist {
       {
         Song track = new Song(name, artist, dur, liked);
         mySongs.add(track);
+        System.out.println("");
       }
 
       public ArrayList<Song> likedSongs()
